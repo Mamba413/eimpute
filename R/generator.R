@@ -13,6 +13,8 @@
 #' @details We generate the matrix by \eqn{UV + \epsilon}, where \eqn{U}, \eqn{V} are \eqn{m} by \eqn{r}, \eqn{r} by \eqn{n} matrix satisfy standard normal
 #' distribution. \eqn{\epsilon} has a normal distribution with mean 0 and variance \eqn{\frac{r}{snr}}.
 #'
+#' @return A matrix with missing values.
+#'
 #' @export
 #' @importFrom stats rnorm
 #'
