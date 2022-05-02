@@ -1,23 +1,26 @@
 Package: eimpute
 Type: Package
 Title: Efficiently Impute Large Scale Incomplete Matrix
-Version: 0.1.0
-Date: 2020-03-10
+Version: 0.2.1
+Date: 2022-04-29
 Authors@R: c(
   person(given = "Zhe", family = "Gao", email = "gaozh8@mail2.sysu.edu.cn", role = c("aut", "cre")),
   person(given = "Jin", family = "Zhu", email = "zhuj37@mail2.sysu.edu.cn", role = c("aut")),
   person(given = "Junxian", family = "Zhu", email = "zhujunx@mail2.sysu.edu.cn", role = c("aut")),
-  person(given = "Xueqin", family = "Wang", email = "wangxq88@mail.sysu.edu.cn", role = c("aut")))
-Author: Zhe Gao [aut, cre], Jin Zhu [aut], Junxian Zhu [aut], Xueqin Wang [aut]
+  person(given = "Xueqin", family = "Wang", email = "wangxq88@mail.sysu.edu.cn", role = c("aut")),
+  person(given = "Yixuan", family = "Qiu", email = "yixuan.qiu@cos.name", role = c("cph")),
+  person(given = "Gael", family = "Guennebaud", email = "gael.guennebaud@inria.fr", role = c("cph", "ctb")),
+  person(given = "Jitse", family = "Niesen", email = "jitse@maths.leeds.ac.uk", role = c("cph", "ctb")),
+  person(given = "Ray", family = "Gardner", role = c("ctb")))
+Author: Zhe Gao [aut, cre], Jin Zhu [aut], Junxian Zhu [aut], Xueqin Wang [aut], Yixuan Qiu [cph], Gael Guennebaud [cph, ctb], Jitse Niesen [cph, ctb], Ray Gardner [ctb]
 Maintainer: Zhe Gao <gaozh8@mail2.sysu.edu.cn>
-Description: Efficiently impute large scale matrix with missing values via its unbiased low-rank matrix approximation. Our main approach is Hard-Impute algorithm proposed in <http://www.jmlr.org/papers/v11/mazumder10a.html>, which achieves highly computational advantage by truncated singular-value decomposition.
+Description: Efficiently impute large scale matrix with missing values via its unbiased low-rank matrix approximation. Our main approach is Hard-Impute algorithm proposed in <https://www.jmlr.org/papers/v11/mazumder10a.html>, which achieves highly computational advantage by truncated singular-value decomposition.
 License: GPL-3 | file LICENSE
 Imports: Rcpp (>= 0.12.6)
 LinkingTo: Rcpp, RcppEigen
 Encoding: UTF-8
-LazyData: true
-RoxygenNote: 7.0.2
+RoxygenNote: 7.1.1
 NeedsCompilation: yes
-Packaged: 2020-03-11 12:38:30 UTC; gaozhe
+Packaged: 2022-04-27 14:50:14 UTC; gaozhe
 Suggests: knitr
 VignetteBuilder: knitr
