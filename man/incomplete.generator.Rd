@@ -19,6 +19,9 @@ incomplete.generator(m, n, r, snr = 3, prop = 0.5, seed = 1)
 
 \item{seed}{the random seed. Default \code{seed = 1}.}
 }
+\value{
+A matrix with missing values.
+}
 \description{
 Generate a matrix with missing values,
 where the indices of missing values are uniformly randomly distributed in the matrix.

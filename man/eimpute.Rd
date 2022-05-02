@@ -8,8 +8,11 @@ eimpute(
   x,
   r,
   svd.method = c("tsvd", "rsvd"),
+  noise.var = 0,
   thresh = 1e-05,
   maxit = 100,
+  init = FALSE,
+  init.mat = 0,
   override = FALSE,
   control = list(...),
   ...
@@ -25,21 +28,27 @@ If \code{svd.method = "rsvd"}, a randomized SVD is used,
 else if \code{svd.method = "tsvd"}, standard truncated SVD is used.
 Any unambiguous substring can be given. Default \code{svd.method = "tsvd"}.}
 
+\item{noise.var}{the variance of noise.}
+
 \item{thresh}{convergence threshold, measured as the relative change in the Frobenius norm between two successive estimates.}
 
 \item{maxit}{maximal number of iterations.}
 
+\item{init}{if init = FALSE(the default), the missing entries will initialize with mean.}
+
+\item{init.mat}{the initialization matrix.}
+
 \item{override}{logical value indicating whether the observed elements in \code{x} should be overwritten by its low-rank approximation.}
 
-\item{control}{a list of parameters that control details of standard procedure, See \link{stad.control}.}
+\item{control}{a list of parameters that control details of standard procedure, See \link{biscale.control}.}
 
 \item{...}{arguments to be used to form the default control argument if it is not supplied directly.}
 }
 \value{
-A list is returned
-\item{\code{x.imp}}{The matrix after completion.}
-\item{\code{rmse}}{The relative mean square error of matrix completion, i.e., training error.}
-\item{\code{iter.count}}{The number of iterations.}
+A list containing the following components
+\item{\code{x.imp}}{the matrix after completion.}
+\item{\code{rmse}}{the relative mean square error of matrix completion, i.e., training error.}
+\item{\code{iter.count}}{the number of iterations.}
 }
 \description{
 Fit a low-rank matrix approximation to a matrix with missing values.
@@ -58,7 +67,7 @@ head(x_impute[["x.imp"]][, 1:6])
 x_impute[["rmse"]]
 }
 \references{
-Rahul Mazumder, Trevor Hastie and Rob Tibshirani (2010) Spectral Regularization Algorithms for Learning Large Incomplete Matrices, http://www.stanford.edu/~hastie/Papers/mazumder10a.pdf Journal of Machine Learning Research 11 (2010) 2287-2322
+Rahul Mazumder, Trevor Hastie and Rob Tibshirani (2010) Spectral Regularization Algorithms for Learning Large Incomplete Matrices, Journal of Machine Learning Research 11, 2287-2322
 
-Nathan Halko, Per-Gunnar Martinsson, Joel A. Tropp (2011) Finding Structure with Randomness: Probabilistic Algorithms for Constructing Approximate Matrix Decompositions, https://arxiv.org/pdf/0909.4061.pdf Siam Review Vol. 53, num. 2, pp. 217-288
+Nathan Halko, Per-Gunnar Martinsson, Joel A. Tropp (2011) Finding Structure with Randomness: Probabilistic Algorithms for Constructing Approximate Matrix Decompositions, Siam Review Vol. 53, num. 2, pp. 217-288
 }
