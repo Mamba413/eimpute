@@ -23,7 +23,7 @@ Eigen::MatrixXd vec2mat(Eigen::VectorXd x, int type, int num){
 }
 
 // [[Rcpp::export]]
-List biscale_alt(Eigen::MatrixXd x, Eigen::MatrixXd ind, Eigen::VectorXd obsrow, Eigen::VectorXd obscol, int max_it, double tol, Eigen::VectorXd alpha, Eigen::VectorXd beta, Eigen::VectorXd tau, Eigen::VectorXd gamma,
+List biscale_alt(Eigen::MatrixXd x, Eigen::MatrixXi ind, Eigen::VectorXd obsrow, Eigen::VectorXd obscol, int max_it, double tol, Eigen::VectorXd alpha, Eigen::VectorXd beta, Eigen::VectorXd tau, Eigen::VectorXd gamma,
             bool row_mean, bool col_mean, bool row_std, bool col_std) {
   int m = x.rows();
   int n = x.cols();
